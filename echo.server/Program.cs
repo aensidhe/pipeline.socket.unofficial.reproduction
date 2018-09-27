@@ -16,18 +16,36 @@ namespace echo.server
             {
                 Console.WriteLine("Waiting for a connection... ");
 
-                using (var client = server.AcceptTcpClient())
-                using (var stream = client.GetStream())
+                try
                 {
-                    Console.WriteLine("Connected");
-                    stream.Write(Encoding.ASCII.GetBytes("Greetings! Some salt for auth!\n"));
-                    stream.Flush();
-                    Console.WriteLine("Greetings send");
-
-                    using (var reader = new StreamReader(stream, Encoding.ASCII))
+                    using (var client = server.AcceptTcpClient())
+                    using (var stream = client.GetStream())
                     {
-                        Console.WriteLine("Received: " + reader.ReadLine());
+                        Console.WriteLine("Connected");
+                        stream.Write(Encoding.ASCII.GetBytes("Greetings! Some salt for auth!\n"));
+                        stream.Flush();
+                        Console.WriteLine("Greetings send");
+
+                        var buffer = new byte[10000];
+                        var read = stream.Read(buffer);
+                        var s = Encoding.ASCII.GetString(buffer.AsSpan(0, read));
+                        var strings = s.Split(" + ");
+                        if (strings.Length > 1 && Guid.TryParse(strings[1], out var id))
+                        {
+                            Console.WriteLine(s);
+
+                            stream.Write(Encoding.ASCII.GetBytes($"Auth is ok + {id}!\n"));
+                            stream.Flush();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Auth failed!\n");
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
         }

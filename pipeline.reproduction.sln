@@ -7,6 +7,12 @@ ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stream.client", "stream.client\stream.client.csproj", "{7A4A086E-9173-47F1-BF3C-C59EF47B78DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pipeline.client", "pipeline.client\pipeline.client.csproj", "{303525D3-C831-450D-9DDB-3A1E955CB23E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pipeline.client.read", "pipeline.client.read\pipeline.client.read.csproj", "{221F2031-0AB0-4B70-A733-CB6A6BDFBD33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,5 +23,17 @@ Global
 		{7F32CD49-9ACC-4020-8EBA-52E5EEBDB375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F32CD49-9ACC-4020-8EBA-52E5EEBDB375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F32CD49-9ACC-4020-8EBA-52E5EEBDB375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4A086E-9173-47F1-BF3C-C59EF47B78DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4A086E-9173-47F1-BF3C-C59EF47B78DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4A086E-9173-47F1-BF3C-C59EF47B78DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4A086E-9173-47F1-BF3C-C59EF47B78DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303525D3-C831-450D-9DDB-3A1E955CB23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303525D3-C831-450D-9DDB-3A1E955CB23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303525D3-C831-450D-9DDB-3A1E955CB23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303525D3-C831-450D-9DDB-3A1E955CB23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221F2031-0AB0-4B70-A733-CB6A6BDFBD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221F2031-0AB0-4B70-A733-CB6A6BDFBD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221F2031-0AB0-4B70-A733-CB6A6BDFBD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221F2031-0AB0-4B70-A733-CB6A6BDFBD33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
